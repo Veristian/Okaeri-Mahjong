@@ -1609,3 +1609,38 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+#my own additions
+
+init python:
+    class Particle:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+            self.size = random.randint(4, 6)
+            self.color=(255, 255, 255, 255)
+            self.velocityX = random.uniform(-1, 1)
+            self.velocityY = random.uniform(-2, 0)
+            self.life = random.randint(20, 50)
+
+        def update(self):
+            self.x += self.velocityX
+            self.y += self.velocityY
+            self.size -= 0.05
+            self.life -= 1
+            if self.size <= 0 or self.life <=0:
+                particles.remove(self)
+        
+        def draw(self):
+            pygame.draw.circle(screen, (128,100,200), (int(self.x), int(self.y)), int(self.size))
+
+    particles = []                    
+
+    def drawParticles():
+        x, y = renpy.get_mouse_pos()
+
+        particles.append(Particle(x, y))
+        for particle in particles:
+            particle.update()
+            particle.draw()
