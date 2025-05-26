@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 11: expected 'comma or end of line' not found.
-    return
-    ^
+File "game/script.rpy", line 157: expected 'simple_expression' not found.
+    xalign=0
+          ^
+
+File "game/script.rpy", line 160: expected 'simple_expression' not found.
+    xalign=1
+          ^
+
+File "game/script.rpy", line 163: expected 'simple_expression' not found.
+    xalign=0.75
+          ^
+
+File "game/script.rpy", line 166: expected 'simple_expression' not found.
+    xalign=0.25
+          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Tue May 13 01:35:04 2025
+Thu May 22 21:32:46 2025
